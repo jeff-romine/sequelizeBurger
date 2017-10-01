@@ -1,2 +1,2 @@
-# burger
-Week 14 Boot Camp Homework
+# sequelizeBurger
+Week 15 Boot Camp Homework

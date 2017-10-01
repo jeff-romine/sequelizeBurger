@@ -1,15 +1,14 @@
-var orm = require("../config/orm.js");
-
-var burger = {
-    all: (cb) =>
-        orm.all("burgers", cb),
-    create: (obj, cb) =>
-        orm.create("burgers", obj, cb),
-    update: (id, obj, cb) =>
-        orm.update("burgers", id, obj, cb),
-    delete: (id, cb) =>
-        orm.delete("burgers", id, cb)
+module.exports = function(sequelize, DataTypes) {
+  var Burger = sequelize.define("Burger", {
+    burger_name: DataTypes.STRING,
+    devoured: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    date: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+    }
+  });
+  return Burger;
 };
-
-// Export the database functions for the controller (catsController.js).
-module.exports = burger;
