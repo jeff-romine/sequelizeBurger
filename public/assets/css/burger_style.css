@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../img/purty_wood.png");
+}
+
+.row {
+
+    background-color:rgba(0,0,0,0);
+    border: 0;
+    width: 100%;
+}
+
+.hero-spacer {
+    height: 300px;
+}
+
+.burger-image {
+    height: 300px;
+}
+
+
+.devour-button {
+    float:right
+}
+.burger-name {
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 2em;
+    line-height: 2em;
+    padding: 0 1em;
+}
+.hero-image {
+    height: 300px;
+    background-image: url("../img/burger.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-size: cover;
+}
+
+#burger {
+    font-size:20px;
+    width: 100%;
+}

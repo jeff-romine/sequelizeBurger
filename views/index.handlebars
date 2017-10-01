@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="burger-image center-block" src="../assets/img/burger.png" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row panel panel-default">
+        <div class="col-lg-1 col-md-1 col-sm-1"></div>
+        <div id="undevoured" class="col-lg-5 col-md-5 col-sm-5">
+            {{#each burgers}}
+                {{#unless this.devoured}}
+                        <h3 class="burger-name">{{this.id}}. {{this.burger_name}}
+                            <form class="devour-button" action="/{{this.id}}?_method=PUT" method="POST">
+                                <input type="hidden" name="devour" value="true">
+                                <button type="submit" class="btn">Devour!</button>
+                            </form>
+                        </h3>
+                    <!--<div class="burger-undevoured col-lg-12 col-md-12 col-sm-12">-->
+                    <!--</div>-->
+                {{/unless}}
+            {{/each}}
+        </div>
+        <div id="devoured" class="col-lg-5 col-md-5col-sm-5">
+            {{#each burgers}}
+
+            {{#if this.devoured}}
+                <div class="burger-devoured">
+                    <h3 class="burger-name">{{this.id}}. {{this.burger_name}}</h3>
+                </div>
+            {{/if}}
+            {{/each}}
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-3"></div>
+
+    <div class="col-lg-6 text-center">
+        <h2>Add a Burger</h2>
+        <form class="create-update-form" action="/" method="POST">
+            <div class="form-group center-block">
+                <input type="text" id="burger" name="burger_name">
+            </div>
+            <button type="submit">Add Burger</button>
+        </form>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+</div>
+
+
+
