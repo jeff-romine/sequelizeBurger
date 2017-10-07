@@ -8,7 +8,6 @@ var db = require("../models");
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
   db.Burger.findAll({}).then(function (data) {
-        console.log(JSON.stringify(data, null, 2));
         var undevouredIndex=1;
         var devouredIndex=1;
 
